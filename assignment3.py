@@ -1,18 +1,18 @@
 import numpy as np
 import cv2
 
-n = int(input("Enter canvas size in pixel ( multiple of 8 ): "))
-b = int(n/8)
-print(b)
+cs = int(input("Enter canvas size in pixel ( multiple of 8 ): "))
+c = int(n/8)
+print(c)
 
-checkerboard = np.zeros([n,n],dtype = 'uint8')
-s = b
-k = b* 2
+checkerboard = np.zeros([cs,cs],dtype = 'uint8')
+a = c
+k = c* 2
 
-for j in range(s,n,k):
-        for i in range(s,n,k):
-                checkerboard[j-s:j,i-s:i] = 255
-                checkerboard[j:j+s,i:i+s] = 255
+for j in range(a,cs,k):
+        for i in range(a,cs,k):
+                checkerboard[j-a:j,i-a:i] = 255
+                checkerboard[j:j+a,i:i+a] = 255
         
 cv2.imshow('Checkboard 8*8',checkerboard)
 cv2.waitKey(0)
